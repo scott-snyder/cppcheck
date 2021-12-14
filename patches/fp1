@@ -1,5 +1,5 @@
-Bottom: dc1de173ad587d609d485bb02b403ea81dec7c00
-Top:    73bfe4151626e54d7dbe554819fdf9df45907ad4
+Bottom: 99978af596c89cc162bf2c0c66231bea9c3c6222
+Top:    99978af596c89cc162bf2c0c66231bea9c3c6222
 Author: scott snyder <sss@karma>
 Date:   2021-04-08 11:17:14 -0400
 
@@ -48,9 +48,3 @@ x.cc:19:3: note: Using reference to dangling temporary.
   e.foo();
   ^
 ```
-
-
----
-
-lib/symboldatabase.cpp | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
