@@ -1,0 +1,34 @@
+Bottom: 99978af596c89cc162bf2c0c66231bea9c3c6222
+Top:    99978af596c89cc162bf2c0c66231bea9c3c6222
+Author: scott snyder <sss@karma>
+Date:   2021-12-15 10:17:36 -0500
+
+Fix false positive with unions with default ctors.
+
+We get a false positive uninitialized variable warning from this source:
+
+union CachedPointer
+{
+public:
+  CachedPointer() : m_a(nullptr) {}
+  int* get() const;
+  int* m_a;
+};
+
+
+void test1()
+{
+  CachedPointer cp1;
+  cp1.get();
+}
+
+
+$ cppcheck x.cc
+Checking x.cc ...
+x.cc:13:3: error: Uninitialized variable: cp1 [uninitvar]
+  cp1.get();
+  ^
+
+
+Try to fix by recognizing default constructors of unions.
+
