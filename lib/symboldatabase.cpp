@@ -888,7 +888,7 @@ void SymbolDatabase::createSymbolDatabaseNeedInitialization()
                     scope.definedType = &mBlankTypes.back();
                 }
 
-                if (scope.isClassOrStruct() && scope.definedType->needInitialization == Type::NeedInitialization::Unknown) {
+                if (scope.isClassOrStructOrUnion() && scope.definedType->needInitialization == Type::NeedInitialization::Unknown) {
                     // check for default constructor
                     bool hasDefaultConstructor = false;
 
@@ -913,6 +913,9 @@ void SymbolDatabase::createSymbolDatabaseNeedInitialization()
                     // Another check will figure out if the constructor actually initializes everything.
                     if (hasDefaultConstructor)
                         scope.definedType->needInitialization = Type::NeedInitialization::False;
+                    else if (scope.type == Scope::eUnion)
+                        scope.definedType->needInitialization = Type::NeedInitialization::True;
+                      
 
                     // check each member variable to see if it needs initialization
                     else {
@@ -945,8 +948,7 @@ void SymbolDatabase::createSymbolDatabaseNeedInitialization()
                                 unknowns++;
                         }
                     }
-                } else if (scope.type == Scope::eUnion && scope.definedType->needInitialization == Type::NeedInitialization::Unknown)
-                    scope.definedType->needInitialization = Type::NeedInitialization::True;
+                }
             }
 
             retry++;
