@@ -1283,6 +1283,9 @@ const Token* CheckUninitVarImpl::isVariableUsage(const Token *vartok, const Libr
             while (tok->valueType() && tok->valueType()->pointer == 0 && Token::simpleMatch(tok->astParent(), "."))
                 tok = tok->astParent();
         }
+        if (Token::simpleMatch(tok->astParent(), "::")) {
+          tok = tok->astParent();
+        }
         if (Token::simpleMatch(tok->astParent(), "=")) {
             if (astIsLhs(tok)) {
                 if (alloc == ARRAY || !derefValue || !derefValue->isUnaryOp("*") || !pointer)
