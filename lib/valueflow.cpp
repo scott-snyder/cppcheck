@@ -2850,11 +2850,13 @@ struct ValueFlowAnalyzer : Analyzer {
             if (Token::simpleMatch(startBlock, ";") && Token::simpleMatch(parent->tokAt(-2), "} while ("))
                 startBlock = parent->linkAt(-2);
             const Token* endBlock = startBlock->link();
-            pms.removeModifiedVars(endBlock);
-            if (state)
+            if (endBlock) {
+              pms.removeModifiedVars(endBlock);
+              if (state)
                 pms.addState(endBlock->previous(), getProgramState());
-            else if (Token::simpleMatch(endBlock, "} else {"))
+              else if (Token::simpleMatch(endBlock, "} else {"))
                 pms.addState(endBlock->linkAt(2)->previous(), getProgramState());
+            }
         }
 
         if (!(flags & Assume::Quiet)) {
