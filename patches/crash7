@@ -1,0 +1,26 @@
+Bottom: e9a016b0cf49db112dbf1fb575d3a064b9a4498b
+Top:    e9a016b0cf49db112dbf1fb575d3a064b9a4498b
+Author: scott snyder <sss@karma>
+Date:   2021-12-17 16:53:08 -0500
+
+cppcheck crashes on this source (which contains a syntax error):
+
+int nnext();
+
+void checkPOOL()
+{
+  do
+  {
+    int key;
+    while (key = nnext()) {          }
+  }
+  while (nnext())
+    nnext();
+}
+
+
+$ cppcheck   x.cc
+Checking x.cc ...
+Segmentation fault (core dumped)
+
+
