@@ -1,6 +1,6 @@
 /*
  * Cppcheck - A tool for static C/C++ code analysis
- * Copyright (C) 2007-2021 Cppcheck team.
+ * Copyright (C) 2007-2022 Cppcheck team.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -6025,7 +6025,10 @@ void SymbolDatabase::setValueType(Token *tok, const ValueType &valuetype)
         Token *autoTok = parent->tokAt(-2);
         setValueType(autoTok, *vt2);
         setAutoTokenProperties(autoTok);
-        const_cast<Variable *>(parent->previous()->variable())->setValueType(*vt2);
+        Variable* v = const_cast<Variable *>(parent->previous()->variable());
+        if (v) {
+          v->setValueType(*vt2);
+        }
         return;
     }
 
