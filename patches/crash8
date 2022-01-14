@@ -1,0 +1,25 @@
+Bottom: 67639e540a40436df4961a068ca57e937d38cb0b
+Top:    67639e540a40436df4961a068ca57e937d38cb0b
+Author: scott snyder <sss@karma>
+Date:   2022-01-14 11:42:49 -0500
+
+cppcheck crashes on this (erroneous) source:
+
+double f(double);
+
+struct S
+{
+};
+S::S(const S& rhs) = default;
+
+
+void g (double x)
+{
+  auto y {f(x)};
+}
+
+
+$  /home/sss/cppcheck/inst/bin/cppcheck  x.cc
+Checking x.cc ...
+Segmentation fault (core dumped)
+
