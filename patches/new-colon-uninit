@@ -24,4 +24,3 @@ x.cc:7:18: error: Uninitialized variable: g [uninitvar]
 The warning goes away if the `::' before the new is removed.
 
 Try to fix by extending matching to recognize this case.
-
