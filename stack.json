@@ -1,0 +1,27 @@
+{
+  "version": 5,
+  "prev": "3ec6a7a4c629cc2c5dfa942de9a8e60ca7457206",
+  "head": "db8d486ce4a77d2bab4f551d5e991cdfd2e98433",
+  "applied": [],
+  "unapplied": [
+    "union-defctor",
+    "new-colon-uninit",
+    "crash7",
+    "crash8"
+  ],
+  "hidden": [],
+  "patches": {
+    "union-defctor": {
+      "oid": "f9f9468621c3db7e5533f37a6cbf5020b2b614b1"
+    },
+    "new-colon-uninit": {
+      "oid": "49187caf8f99f6206f7cc6b615427568c0aa2c35"
+    },
+    "crash7": {
+      "oid": "bf8a0c36bd9d32f753bf66b44432164856125d29"
+    },
+    "crash8": {
+      "oid": "8e60c7654662dc38aa0d52909c01e2bc1f89e98d"
+    }
+  }
+}

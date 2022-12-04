@@ -1,0 +1,27 @@
+Bottom: f220cc06166cc301bb05b94b9bc59a0b66c54979
+Top:    e9a016b0cf49db112dbf1fb575d3a064b9a4498b
+Author: scott snyder <sss@karma>
+Date:   2021-12-16 12:39:42 -0500
+
+We get a false positive uninitialized variable warning from this source:
+
+struct DbObjectGuard   {
+  DbObjectGuard();
+};
+
+void allocate(char* ptr)
+{
+  DbObjectGuard* g = ::new(ptr) DbObjectGuard();
+}
+
+
+$ cppcheck x.cc
+Checking x.cc ...
+x.cc:7:18: error: Uninitialized variable: g [uninitvar]
+  DbObjectGuard* g = ::new(ptr) DbObjectGuard();
+                 ^
+
+The warning goes away if the `::' before the new is removed.
+
+Try to fix by extending matching to recognize this case.
+
