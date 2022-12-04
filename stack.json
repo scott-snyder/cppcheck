@@ -1,27 +1,27 @@
 {
   "version": 5,
-  "prev": "b1a2dd7c6aaad22d6aa5cc5be7c1d938dd2ebabf",
-  "head": "577d07360e42c302ce49d1096059d982cf380c4f",
-  "applied": [],
-  "unapplied": [
+  "prev": "eb36f70d8bad41f363f5b701c1bb178f8d98a190",
+  "head": "debe1b4bba389e56f46f8029d2a9107d9f84fa3a",
+  "applied": [
     "union-defctor",
     "new-colon-uninit",
     "crash7",
     "crash8"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "union-defctor": {
-      "oid": "f9f9468621c3db7e5533f37a6cbf5020b2b614b1"
+      "oid": "3e160bb58d6d926cc733bb741fffedc855064e0d"
     },
     "new-colon-uninit": {
-      "oid": "49187caf8f99f6206f7cc6b615427568c0aa2c35"
+      "oid": "61ccc910dc4b4bffd766e1cb002f607845b639a2"
     },
     "crash7": {
-      "oid": "bf8a0c36bd9d32f753bf66b44432164856125d29"
+      "oid": "1997a4fb5b0ba874dcc59820d4b6853d801662bb"
     },
     "crash8": {
-      "oid": "8e60c7654662dc38aa0d52909c01e2bc1f89e98d"
+      "oid": "debe1b4bba389e56f46f8029d2a9107d9f84fa3a"
     }
   }
 }
