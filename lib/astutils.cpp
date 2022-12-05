@@ -405,6 +405,9 @@ bool isTemporary(bool cpp, const Token* tok, const Library* library, bool unknow
         return false;
     if (Token::simpleMatch(tok, "(") && tok->astOperand1() &&
         (tok->astOperand2() || Token::simpleMatch(tok->next(), ")"))) {
+        if (Token::simpleMatch (tok->astOperand1(), "typeid")) {
+            return false;
+        }
         if (tok->valueType()) {
             return tok->valueType()->reference == Reference::None;
         }
