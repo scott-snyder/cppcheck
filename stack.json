@@ -1,14 +1,12 @@
 {
   "version": 5,
-  "prev": "447dccff30b9e59cf8f2551fbd183cf5d39947ab",
+  "prev": "e2290d28f925ea0b15a2e1aa2d853980dcef1154",
   "head": "7e68181ab641bf61ff27a3a0d6bbc53f3ff4f36d",
   "applied": [
     "new-colon-uninit",
     "typeid"
   ],
-  "unapplied": [
-    "typeid1"
-  ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "new-colon-uninit": {
@@ -16,9 +14,6 @@
     },
     "typeid": {
       "oid": "7e68181ab641bf61ff27a3a0d6bbc53f3ff4f36d"
-    },
-    "typeid1": {
-      "oid": "67f99cf61f9ea1cb77217204c2fe50dafdd188a4"
     }
   }
 }
