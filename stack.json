@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "9fef6b1926ffc8e0a8d062476e4435b6ea9ab344",
-  "head": "3f05e2ca3548046693c3433fe39943fca93467eb",
+  "prev": "9a439dee28395ca604333a60e32672c6b09a4e37",
+  "head": "2ac92401bcc860cc2cc1d20f642ef8f088021e4c",
   "applied": [
     "new-colon-uninit",
     "typeid1",
-    "typeid2",
-    "refresh-temp"
+    "typeid2"
   ],
   "unapplied": [],
   "hidden": [],
@@ -18,10 +17,7 @@
       "oid": "67f99cf61f9ea1cb77217204c2fe50dafdd188a4"
     },
     "typeid2": {
-      "oid": "b8980ce28a50909ff7cebd2fb7f02f440b468724"
-    },
-    "refresh-temp": {
-      "oid": "3f05e2ca3548046693c3433fe39943fca93467eb"
+      "oid": "2ac92401bcc860cc2cc1d20f642ef8f088021e4c"
     }
   }
 }
