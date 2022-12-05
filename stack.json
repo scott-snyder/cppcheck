@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "9a439dee28395ca604333a60e32672c6b09a4e37",
-  "head": "2ac92401bcc860cc2cc1d20f642ef8f088021e4c",
+  "prev": "850a9fc794aa5369d9c9ed1fa309e09f85c950e9",
+  "head": "7df72b162155bf0c758342eba1ffe127164e8096",
   "applied": [
-    "new-colon-uninit",
+    "new-colon-uninit"
+  ],
+  "unapplied": [
     "typeid1",
     "typeid2"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "new-colon-uninit": {
