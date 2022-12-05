@@ -64,5 +64,22 @@ y.cc:7:10: note: Returning pointer to local variable 'ti' that will be invalid w
          ^
 ```
 
-Work around with a special case.
+Example 3:
 
+z.cc
+```
+class C {};
+static const std::type_info& typeInfo() {
+  return typeid (C);
+}
+```
+
+```
+$ /home/sss/cppcheck/inst/bin/cppcheck z.cc
+Checking z.cc ...
+z.cc:4:17: error: Reference to temporary returned. [returnTempReference]
+  return typeid (C);
+                ^
+```
+
+Work around with a special case.
