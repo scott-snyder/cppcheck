@@ -1,0 +1,27 @@
+Bottom: ef2e1ded027abc314a086079081d947428b78ec8
+Top:    ef2e1ded027abc314a086079081d947428b78ec8
+Author: scott snyder <sss@karma>
+Date:   2023-02-12 17:25:02 -0500
+
+Fix warnings seen for user-defined literals.
+Example:
+
+constexpr double operator"" _degree(unsigned long long x) { 
+  return 0.017453292519943295 * x;                   
+}
+
+void  TestTrackState()
+{
+  int foo  = 90_degree;
+}
+
+
+$ cppcheck  x.cc
+Checking x.cc ...
+x.cc:0:0: error: Internal Error. MathLib::toLongNumber: input was not completely consumed: 90_degree [cppcheckError]
+
+^
+
+This seems to have been reported:
+
+https://trac.cppcheck.net/ticket/11438
