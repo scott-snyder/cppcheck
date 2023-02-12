@@ -1,0 +1,29 @@
+Bottom: 03ec2396e6a1ad3dca2350505ddea655578e98cc
+Top:    03ec2396e6a1ad3dca2350505ddea655578e98cc
+Author: scott snyder <sss@karma>
+Date:   2023-02-12 12:29:11 -0500
+
+hi -
+
+cppcheck... gives an internal error from toLongNumber for this source:
+
+{{{
+bool initialize(bool flag, float x1, float x2) {
+  if (flag) {   }
+
+  if (x1>-998. and x2>-998.) {
+    return false;
+  }
+
+  return true;
+}
+}}}
+
+
+{{{
+$  cppcheck  x.cc
+Checking x.cc ...
+x.cc:0:0: error: Internal Error. MathLib::toLongNumber: input was not completely consumed: -998.and [cppcheckError]
+
+^
+}}}
