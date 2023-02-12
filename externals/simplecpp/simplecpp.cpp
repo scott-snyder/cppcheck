@@ -929,7 +929,7 @@ void simplecpp::TokenList::combineOperators()
             if (tok->previous && tok->previous->number) {
                 tok->setstr(tok->previous->str() + '.');
                 deleteToken(tok->previous);
-                if (isFloatSuffix(tok->next) || (tok->next && tok->next->startsWithOneOf("AaBbCcDdEeFfPp"))) {
+                if (isFloatSuffix(tok->next) || (tok->next && tok->next->startsWithOneOf("AaBbCcDdEeFfPp") && tok->next->str() != "and")) {
                     tok->setstr(tok->str() + tok->next->str());
                     deleteToken(tok->next);
                 }
