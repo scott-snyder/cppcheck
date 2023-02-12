@@ -651,6 +651,9 @@ bool MathLib::isPositive(const std::string &str)
 static bool isValidIntegerSuffixIt(std::string::const_iterator it, std::string::const_iterator end, bool supportMicrosoftExtensions=true)
 {
     enum class Status { START, SUFFIX_U, SUFFIX_UL, SUFFIX_ULL, SUFFIX_UZ, SUFFIX_L, SUFFIX_LU, SUFFIX_LL, SUFFIX_LLU, SUFFIX_I, SUFFIX_I6, SUFFIX_I64, SUFFIX_UI, SUFFIX_UI6, SUFFIX_UI64, SUFFIX_Z, SUFFIX_LITERAL_LEADER, SUFFIX_LITERAL } state = Status::START;
+
+    if (*it == '_') return true;
+
     for (; it != end; ++it) {
         switch (state) {
         case Status::START:
