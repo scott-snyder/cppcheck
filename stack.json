@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "786452b15eb58ce6d5d4a16c4d6fccc5949a00da",
-  "head": "1c11afa52fa404d2f002590efd9899c3b7077fb3",
-  "applied": [
+  "prev": "b3986b6e8f32f25e0c4bd9decf133995aa841ca4",
+  "head": "74221fbc8dc9c5c64b22b6bd56e790724e41e0aa",
+  "applied": [],
+  "unapplied": [
     "new-colon-uninit",
     "bug22",
     "userlit"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "new-colon-uninit": {
