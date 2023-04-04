@@ -1,23 +1,23 @@
 {
   "version": 5,
-  "prev": "692d4778914466a120fa3105f6793a5f51396aa3",
-  "head": "59030ef53dff61885c058583d2aef94f970ffdc8",
-  "applied": [],
-  "unapplied": [
+  "prev": "b9f665ebf28b5741ee2b5cbb7946730d5acda611",
+  "head": "185ad2b5ac0f5ba692fcf5ee151cfbc41a432820",
+  "applied": [
     "new-colon-uninit",
     "bug22",
     "userlit"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "new-colon-uninit": {
-      "oid": "1f0372867aff2e6281d0d0969f998604962125c9"
+      "oid": "0f6d163433ce0e2e249653f9b7ef1eca9267c452"
     },
     "bug22": {
-      "oid": "5f4d1749cf95eb8b42a0dfa14f87140abf9f4843"
+      "oid": "1cc9fb73376c95ba1c1434616a10538fe9cd13fc"
     },
     "userlit": {
-      "oid": "2cd575509bf0c82675db661b6ac0d6ffe643732a"
+      "oid": "185ad2b5ac0f5ba692fcf5ee151cfbc41a432820"
     }
   }
 }
