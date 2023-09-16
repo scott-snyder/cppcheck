@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "f8647520a37b32189cc9d6e0d9accf43caa6d272",
-  "head": "27bad41b84626aa4df96502a387e68784ff11a09",
+  "prev": "c7b54e5bcb6195789edcdc9f299bed519f248fbf",
+  "head": "efddd772707a16e204a3578dd6bc91cca047528c",
   "applied": [
     "new-colon-uninit",
     "bug22",
-    "userlit"
+    "userlit",
+    "string_view_twoarg"
   ],
   "unapplied": [],
   "hidden": [],
@@ -18,6 +19,9 @@
     },
     "userlit": {
       "oid": "27bad41b84626aa4df96502a387e68784ff11a09"
+    },
+    "string_view_twoarg": {
+      "oid": "efddd772707a16e204a3578dd6bc91cca047528c"
     }
   }
 }

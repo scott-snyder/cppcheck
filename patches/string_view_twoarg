@@ -1,0 +1,51 @@
+Bottom: bc458f6e565048f84488891aa831ee20b5d9b375
+Top:    bc458f6e565048f84488891aa831ee20b5d9b375
+Author: scott snyder <sss@karma>
+Date:   2023-09-15 22:46:17 -0400
+
+(CPPCHECK28)
+
+cppcheck warns about the following source when performance warnings
+are enabled:
+
+```
+
+void foo (const std::string& s, std::string::size_type pos)
+{
+  std::string_view v (s.data(), pos);
+}
+```
+
+```
+$ cppcheck   --enable=performance   x.cc
+Checking x.cc ...
+x.cc:5:20: performance: Constructing a std::string_view from the result of c_str() is slow and redundant. [stlcstrConstructor]
+  std::string_view v (s.data(), pos);
+                   ^
+```
+
+
+But the warning is not valid for this overload of the string_view constructor.
+The length of the view is passed as the second argument, so there is no
+need to call strlen.
+
+I tried to change the warning so that it would only trigger if a single argument
+was used:
+
+```
+diff --git a/lib/checkstl.cpp b/lib/checkstl.cpp
+index ceec3cd9b..2070262bd 100644
+--- a/lib/checkstl.cpp
++++ b/lib/checkstl.cpp
+@@ -1992,7 +1992,7 @@ void CheckStl::string_c_str()
+                         }
+                     }
+                 }
+-            } else if (printPerformance && Token::Match(tok, "%var% (|{ %var% . c_str|data ( )") &&
++            } else if (printPerformance && Token::Match(tok, "%var% (|{ %var% . c_str|data ( ) )|}") &&
+                        tok->variable() && (tok->variable()->isStlStringType() || tok->variable()->isStlStringViewType()) &&
+                        tok->tokAt(2)->variable() && tok->tokAt(2)->variable()->isStlStringType()) {
+                 string_c_strConstructor(tok, tok->variable()->getTypeName());
+```
+
+This seems to fix the problem.
