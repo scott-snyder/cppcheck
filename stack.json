@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "1d7a9c4459693c38ccfe0afdec0d9200e2303bce",
-  "head": "c7b13806e6088964a1f06802b33c45cb76e38633",
+  "prev": "308268551db7673f67680fb4d09202f43f9b21f5",
+  "head": "f26a34c6a87ce1e2b056a05be8e4a148da887b32",
   "applied": [
     "new-colon-uninit",
     "bug22",
     "userlit",
-    "string_view_twoarg",
-    "refresh-temp"
+    "string_view_twoarg"
   ],
   "unapplied": [],
   "hidden": [],
@@ -22,10 +21,7 @@
       "oid": "27bad41b84626aa4df96502a387e68784ff11a09"
     },
     "string_view_twoarg": {
-      "oid": "efddd772707a16e204a3578dd6bc91cca047528c"
-    },
-    "refresh-temp": {
-      "oid": "c7b13806e6088964a1f06802b33c45cb76e38633"
+      "oid": "f26a34c6a87ce1e2b056a05be8e4a148da887b32"
     }
   }
 }

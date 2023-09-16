@@ -1,6 +1,0 @@
-Bottom: bc458f6e565048f84488891aa831ee20b5d9b375
-Top:    bf988e688c74500591c28467bd63446959c1294e
-Author: scott snyder <sss@karma>
-Date:   2023-09-15 22:46:21 -0400
-
-Refresh of string_view_twoarg
