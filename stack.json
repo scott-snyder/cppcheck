@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2b87458b8f908f538ab9851d247d9ce226407046",
-  "head": "50b5740142266a9e05434415ff0b625c1e7b1411",
+  "prev": "d42cffec77f762cbaf72a790a6790b7a6c8c5e53",
+  "head": "8398ae1790f8cc4ec3c401933c017a1fa8afaa76",
   "applied": [
     "new-colon-uninit",
     "bug22",
@@ -23,7 +23,7 @@
       "oid": "2912fa24d44c8282b7a604541dc1c8ed14d35026"
     },
     "pr5448": {
-      "oid": "50b5740142266a9e05434415ff0b625c1e7b1411"
+      "oid": "8398ae1790f8cc4ec3c401933c017a1fa8afaa76"
     },
     "userlit": {
       "oid": "7e1685b8d2b370db925e7fadd413fe651a283f93"
