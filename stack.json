@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "dc39a50953ab968ed8bb465602a7b015c8d3b68e",
+  "prev": "47de60671d8b16eed7cea856a276aff4839f4d6a",
   "head": "2912fa24d44c8282b7a604541dc1c8ed14d35026",
   "applied": [
     "new-colon-uninit",
     "bug22",
     "string_view_twoarg"
   ],
-  "unapplied": [
+  "unapplied": [],
+  "hidden": [
     "userlit"
   ],
-  "hidden": [],
   "patches": {
     "new-colon-uninit": {
       "oid": "f395d885aef42d8eab042b8b69137106a48fa278"
