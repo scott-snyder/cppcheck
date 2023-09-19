@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "90a375f38d77727fcc21481196a10fba19368bf1",
-  "head": "7e1685b8d2b370db925e7fadd413fe651a283f93",
+  "prev": "dc39a50953ab968ed8bb465602a7b015c8d3b68e",
+  "head": "2912fa24d44c8282b7a604541dc1c8ed14d35026",
   "applied": [
     "new-colon-uninit",
     "bug22",
-    "string_view_twoarg",
+    "string_view_twoarg"
+  ],
+  "unapplied": [
     "userlit"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "new-colon-uninit": {
