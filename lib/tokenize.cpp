@@ -2399,7 +2399,8 @@ namespace {
             }
         }
         ScopeInfo3 *parent;
-        std::list<ScopeInfo3> children;
+        std::unordered_multimap<std::string, ScopeInfo3> children;
+        std::unordered_map<std::string, ScopeInfo3*> childrenFullName;
         Type type;
         std::string fullName;
         std::string name;
@@ -2410,18 +2411,22 @@ namespace {
         std::set<std::string> baseTypes;
 
         ScopeInfo3 *addChild(Type scopeType, const std::string &scopeName, const Token *bodyStartToken, const Token *bodyEndToken) {
-            children.emplace_back(this, scopeType, scopeName, bodyStartToken, bodyEndToken);
-            return &children.back();
+            auto it = children.emplace (scopeName,
+                                        ScopeInfo3 (this, scopeType, scopeName, bodyStartToken, bodyEndToken));
+            ScopeInfo3* scope = &it->second;
+            if (scope->type == Record)
+              childrenFullName.emplace (scope->fullName, scope);
+            return scope;
         }
 
         bool hasChild(const std::string &childName) const {
-            return std::any_of(children.cbegin(), children.cend(), [&](const ScopeInfo3& child) {
-                return child.name == childName;
-            });
+            auto it = children.find (childName);
+            return it != children.end();
         }
 
         const ScopeInfo3 * findInChildren(const std::string & scope) const {
-            for (const auto & child : children) {
+            for (const auto & childpair : children) {
+                const ScopeInfo3& child = childpair.second;
                 if (child.type == Record && (child.name == scope || child.fullName == scope))
                     return &child;
 
@@ -2436,16 +2441,22 @@ namespace {
             const ScopeInfo3 * tempScope = this;
             while (tempScope) {
                 // check children
-                auto it = std::find_if(tempScope->children.cbegin(), tempScope->children.cend(), [&](const ScopeInfo3& child) {
-                    return &child != this && child.type == Record && (child.name == scope || child.fullName == scope);
-                });
-                if (it != tempScope->children.end())
-                    return &*it;
+                auto range = tempScope->children.equal_range (scope);
+                for (auto it = range.first; it != range.second; ++it) {
+                  const ScopeInfo3* child = &it->second;
+                  if (child != this && child->type == Record && (child->name == scope || child->fullName == scope))
+                    return child;
+                }
+                auto it = tempScope->childrenFullName.find (scope);
+                if (it != tempScope->childrenFullName.end()) {
+                  return it->second;
+                }
                 // check siblings for same name
                 if (tempScope->parent) {
-                    for (const auto &sibling : tempScope->parent->children) {
-                        if (sibling.name == tempScope->name && &sibling != this) {
-                            const ScopeInfo3 * temp = sibling.findInChildren(scope);
+                    auto srange = tempScope->parent->children.equal_range (tempScope->name);
+                    for (auto sit = srange.first; sit != srange.second; ++sit) {
+                        if (&sit->second != this) {
+                            const ScopeInfo3 * temp = sit->second.findInChildren(scope);
                             if (temp)
                                 return temp;
                         }
@@ -2479,8 +2490,8 @@ namespace {
         ScopeInfo3 * findScope(const ScopeInfo3 * scope) {
             if (scope->bodyStart == bodyStart)
                 return this;
-            for (auto & child : children) {
-                ScopeInfo3 * temp = child.findScope(scope);
+            for (auto & childp : children) {
+                ScopeInfo3 * temp = childp.second.findScope(scope);
                 if (temp)
                     return temp;
             }
