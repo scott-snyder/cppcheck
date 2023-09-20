@@ -1,0 +1,37 @@
+Bottom: 2139d38c831ad577aa9635d2620d6f5010160f0c
+Top:    2139d38c831ad577aa9635d2620d6f5010160f0c
+Author: scott snyder <sss@karma>
+Date:   2023-09-19 20:17:05 -0400
+
+We were spending a lot of time with traces like this:
+
+    at build/tokenize.cpp:9623
+    __it=..., this=<synthetic pointer>)
+    at /usr/include/c++/13/bits/predefined_ops.h:318
+    __pred=..., __last=..., __first=...)
+    at /usr/include/c++/13/bits/stl_algobase.h:2055
+    __pred=..., __last=..., __first=...)
+    at /usr/include/c++/13/bits/stl_algobase.h:2117
+    __first=...) at /usr/include/c++/13/bits/stl_algo.h:3923
+    scope=...) at build/tokenize.cpp:9622
+    at build/tokenize.cpp:10247
+    this=<optimized out>, maxtime=<optimized out>, 
+    codeWithTemplates=@0x7ffe9288c7d8: true)
+    at build/templatesimplifier.cpp:5651
+
+
+where the list being searched had size up to ~10000.
+
+Change to use a unordered_map.
+
+
+Testing on TileCalorimeter/TileMonitoring/src/TileCellNoiseMonTool.cxx
+
+Original time:  560s
+With patch: 307s
+
+Testing on Trigger/TrigAnalysis/TrigInDetAnalysisExample/src/AnalysisConfigMT_Ntuple.cxx
+
+Original time: 947s
+With patch: 552s
+
