@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "8be42fedcf3229074ba12e3a451b6e67bed85343",
-  "head": "65da79394471784641568dc4ac5da5466599809d",
-  "applied": [],
-  "unapplied": [
+  "prev": "745cf29d7cdae38d24a8fdfe78f833d6baea4c59",
+  "head": "7444e44d2d667d6552405cbc242011810dcb0e48",
+  "applied": [
     "new-colon-uninit",
     "bug22",
-    "string_view_twoarg",
+    "string_view_twoarg"
+  ],
+  "unapplied": [
     "pr5448",
     "speedup"
   ],
@@ -15,13 +16,13 @@
   ],
   "patches": {
     "new-colon-uninit": {
-      "oid": "f395d885aef42d8eab042b8b69137106a48fa278"
+      "oid": "df0108f7b48552481ebae231a1a1cdca09dd991d"
     },
     "bug22": {
-      "oid": "101f24aecd44bafcd36f8a57179aab4db69cd67c"
+      "oid": "7354cc9a8f484cc8fd31a7b6f2e2db5fa2d2f88d"
     },
     "string_view_twoarg": {
-      "oid": "2912fa24d44c8282b7a604541dc1c8ed14d35026"
+      "oid": "7444e44d2d667d6552405cbc242011810dcb0e48"
     },
     "pr5448": {
       "oid": "c8195295610db3e87765674a6205f5080dbc24de"
