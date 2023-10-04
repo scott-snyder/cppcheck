@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "4d12911ed74badb0f436fb57b6efb5b3d3cbd831",
-  "head": "ce7624332fd8aec5030939ead3e1a84f0d5c099c",
+  "prev": "a4de4750fe7011f612b3f0ae44c92d5a15efa223",
+  "head": "39aa4cbfca26f69fc8afe1c370479a37471911dc",
   "applied": [
     "new-colon-uninit",
     "bug22",
     "pr5448",
-    "speedup"
+    "speedup",
+    "fix-11975-symboldatabase"
   ],
   "unapplied": [],
   "hidden": [
@@ -24,6 +25,9 @@
     },
     "speedup": {
       "oid": "ce7624332fd8aec5030939ead3e1a84f0d5c099c"
+    },
+    "fix-11975-symboldatabase": {
+      "oid": "39aa4cbfca26f69fc8afe1c370479a37471911dc"
     },
     "userlit": {
       "oid": "7e1685b8d2b370db925e7fadd413fe651a283f93"
