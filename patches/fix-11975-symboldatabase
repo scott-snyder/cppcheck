@@ -1,7 +1,0 @@
-Bottom: 6dfd5b42a99ed405f4b96d7b0d9885b03a4f62a8
-Top:    6dfd5b42a99ed405f4b96d7b0d9885b03a4f62a8
-Author: Daniel Marjamäki <daniel.marjamaki@gmail.com>
-Date:   2023-09-13 13:37:57 +0200
-
-Fix #11975 (SymbolDatabase: findFunction does not find the correct function) (#5440)
-
