@@ -1,7 +1,7 @@
-Bottom: 9b9ce334dd4872669c5a959058acf2655254d5c5
-Top:    625210b1c2a8ccc93385c31c7908c7be6271d5c4
+Bottom: b489864ff291a7644f4e212d7ff98214d12a4037
+Top:    36d1ffb2127e1c2eb3be289cfc91b5f6e020b449
 Author: scott snyder <sss@karma>
-Date:   2023-09-19 20:17:05 -0400
+Date:   2024-09-02 14:54:52 -0400
 
 We were spending a lot of time with traces like this:
 
