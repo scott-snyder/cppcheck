@@ -1,7 +1,7 @@
 Bottom: 88177e1b163507dd491ecaae0bd7068787091421
-Top:    88177e1b163507dd491ecaae0bd7068787091421
+Top:    6cc0d44877e069df6906a195ce12ea606af694d0
 Author: scott snyder <sss@karma>
-Date:   2026-01-04 13:46:10 -0500
+Date:   2026-01-04 14:05:17 -0500
 
 We were spending a lot of time with traces like this:
 
