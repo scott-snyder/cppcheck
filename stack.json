@@ -1,12 +1,12 @@
 {
   "version": 5,
-  "prev": "1abb5b6557b8af429007759e6efe822b13589d85",
-  "head": "cc3c6ac6c2c76059af33997b61f72cf593c91c95",
-  "applied": [
+  "prev": "7ee4c1300a352cc91ea4673c78bbe1169ab2dafa",
+  "head": "f726f98ed2c3277780ee133ec5338f6352d7b43b",
+  "applied": [],
+  "unapplied": [
     "new-colon-uninit",
     "speedup"
   ],
-  "unapplied": [],
   "hidden": [
     "userlit"
   ],
