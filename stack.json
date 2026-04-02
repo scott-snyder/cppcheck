@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8a0997b2ea9d227bdce07c17c67c05da1bd6a52d",
-  "head": "502c802a69c78f3d8cfd9973aa2108ae169c73b5",
+  "prev": "ff76e2e9b48cd182e66668c828fc9eb727a49dba",
+  "head": "b2606ff3123cfafebe12d1621a57e28f270d809e",
   "applied": [],
   "unapplied": [
     "new-colon-uninit",
