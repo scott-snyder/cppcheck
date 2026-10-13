@@ -1685,6 +1685,12 @@ void CheckOtherImpl::checkPassByReference()
 
 void CheckOtherImpl::passedByValueError(const Variable* var, bool inconclusive, bool isRangeBasedFor)
 {
+    if (var->valueType() &&
+        mSettings.library.getTypeCheck("passedByValue", var->valueType()->str()) == Library::TypeCheck::suppress)
+    {
+      return;
+    }
+
     std::string id = isRangeBasedFor ? "iterateByValue" : "passedByValue";
     const std::string action = isRangeBasedFor ? "declared as": "passed by";
     const std::string type = isRangeBasedFor ? "Range variable" : "Function parameter";
