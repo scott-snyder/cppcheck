@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "41584e3c7af9ee4a0d7fcf205cb9c4d6ac602ecf",
-  "head": "a27a945dc507e997d6685cc6781a8e4a3bf70f48",
+  "prev": "6f0704eb581a794b15dc073dcd099021cc7fb9f8",
+  "head": "543160a3a0d903b07f82d91212f851fadb070163",
   "applied": [
     "new-colon-uninit",
     "speedup",
-    "suppressPassedByValue",
-    "refresh-temp"
+    "suppressPassedByValue"
   ],
   "unapplied": [],
   "hidden": [
@@ -16,14 +15,11 @@
     "new-colon-uninit": {
       "oid": "6c93279880b811861370aae06c395719596364d8"
     },
-    "refresh-temp": {
-      "oid": "a27a945dc507e997d6685cc6781a8e4a3bf70f48"
-    },
     "speedup": {
       "oid": "86f90f7533c0a86891fe8fe96c9240314f885fd7"
     },
     "suppressPassedByValue": {
-      "oid": "6eb6f4936f33a94b6d2b518ab0d0ffcc4c18ec56"
+      "oid": "543160a3a0d903b07f82d91212f851fadb070163"
     },
     "userlit": {
       "oid": "7e1685b8d2b370db925e7fadd413fe651a283f93"
